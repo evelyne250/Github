@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
+import { ProfileService } from './profile.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +11,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 
+
+
+// import { GithubService } from './services/github.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +24,13 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProfileService], 
+  // [GithubService]
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
