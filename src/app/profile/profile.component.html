@@ -31,3 +31,10 @@
             </div>
           </div>
         </div> -->
+        <div *ngIf="profile">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              {{profile.name}} <span>({{profile.login}})</span>
+            </div>
+          </div>
+        </div>
