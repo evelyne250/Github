@@ -116,8 +116,8 @@ getProfileRepos(){
   
 }
 
-// updateProfile(username:string){
-//   this.username = username;
-// }
+updateProfile(username:string){
+  this.username = username;
+}
 
 }
