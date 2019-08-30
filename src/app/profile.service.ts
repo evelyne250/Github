@@ -98,14 +98,26 @@ import 'rxjs/add/operator/map';
 export class ProfileService {
 private username:any;
 private access_token:"0229d801c1bba53175f7eae60ff1b80e540063c5";
+
   constructor(private http:HttpClient) { 
     console.log("service is now ready");
     this.username='evelyne250'; 
     this.access_token='0229d801c1bba53175f7eae60ff1b80e540063c5';
-}
+  
+  }
 getProfileInfo(){
   return this.http.get("https://api.github.com/users/" + this.username + "?access_token=" + 
   this.access_token);
-  // .map(res => res.json());
+ 
 }
-} 
+getProfileRepos(){
+  return this.http.get("https://api.github.com/users/" + this.username + "/repos?access_token=" + 
+  this.access_token);
+  
+}
+
+// updateProfile(username:string){
+//   this.username = username;
+// }
+
+}
