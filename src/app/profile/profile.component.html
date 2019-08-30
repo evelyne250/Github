@@ -1,8 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
 <div *ngIf="profile">
      
           <div class="panel-body">
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-md-12">
                 <img  src="https://avatars1.githubusercontent.com/u/52695424?v=4" width="200" height="200">
               </div>
               <div class="panel panel-default">
@@ -13,19 +16,6 @@
                   <span *ngIf="profile.hireable"> Hireable status: To be hired.</span>
                 </div>
               </div>
-<!-- 
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Repos</h3>
-                </div>
-                <div class="panel-body" *ngFor="let repo of repos">
-                  <p class="clearfix">
-                    {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>
-                  </p>
-                  <p>{{repo.description}}</p>
-                </div>
-              </div>
-            </div> -->
                  
                    <div class="col-sm-5">
                      <div>
@@ -38,7 +28,25 @@
                         </p>
                      </div>
                    </div>
+</div>
+          </div>  
+</div>
+</div>
+           <div class="col-md-6">
+              <div class="panel panel-default">
+             
+                  <h1>Repos</h1>
+                </div>
+                <div class="panel-body" *ngFor="let repo of repos">
+                  <p>
+                    {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>
+                  </p>
+                 </div> <p>{{repo.description}}</p>
+                </div>
+              </div>
+             
             </div>
-          </div>
-        </div>
+          
+          
+      
        
