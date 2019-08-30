@@ -10,6 +10,8 @@ import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { StrikethroughDirective } from './strikethrough.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 
 
@@ -20,7 +22,9 @@ import { ProfileComponent } from './profile/profile.component';
     SearchComponent,
     NavbarComponent,
     NotFoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    StrikethroughDirective,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,65 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron">
     <h1>search</h1>
     <form>
             Username:<br>
-        <input type="text" name="name" class="form-control" placeholder="eg.evelyne250">
-    <br>   <input type="submit"  class="btn btn-success" value="Search">
+        <input type="text" name="name" class="form-control" placeholder="eg.evelyne250" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+    <br>   
     </form>
     <p class="jumbotron"></p>
     
 </div>
-<footer class="blockquote-footer">evelyne@2019</footer>
+<footer class="blockquote-footer">evelyne@2019</footer> -->
+<form action="" class="search-form">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+        </div>
+      </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+    <div *ngIf="profile">
+         
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img  src={{profile.avatar_url}} width="200" height="200">
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      {{profile.name}} <span>({{profile.login}})</span>
+                      <span *ngIf="profile.company"><br>works at {{profile.company}}</span>
+                      <span *ngIf="profile.location"><br>place : {{profile.location}}</span><br>
+                      <span *ngIf="profile.hireable"> Hireable status: To be hired.</span>
+                    </div>
+                  </div>
+                     
+                       <div class="col-sm-6">
+                         <div>
+                           <p>
+                             <span class="label label-default">{{profile.public_repos}} public_Repos</span>
+                             <br><span class="label label-success">{{profile.followers}} followers</span>
+                             <br><span class="label label-default">{{profile.following}} following</span>
+                             <br><span class="label success">{{profile.public_gists}} public_gists</span>
+                         <br><a href="{{profile.html_url}}" class="btn btn-success">Visit account</a>
+                            </p>
+                         </div>
+                       </div>
+    </div>
+              </div>  
+    </div>
+    </div>
+               <div class="col-md-6">
+                  <div class="panel panel-default">
+                 
+                      <h1>Repos</h1>
+                    </div>
+                    <div class="panel-body" *ngFor="let repo of repos">
+                      <p>
+                        {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-info">More Info</a>
+                      </p>
+                     </div>
+                    </div>
+                  </div>
+                 
+                </div>
+              
