@@ -1,14 +1,3 @@
-<!-- <div class="jumbotron">
-    <h1>search</h1>
-    <form>
-            Username:<br>
-        <input type="text" name="name" class="form-control" placeholder="eg.evelyne250" [(ngModel)]="username" name="username" (keyup)="findProfile()">
-    <br>   
-    </form>
-    <p class="jumbotron"></p>
-    
-</div>
-<footer class="blockquote-footer">evelyne@2019</footer> -->
 <div class="jumbotron">
         <h1>search</h1>
         <form>
@@ -16,6 +5,7 @@
             <input type="text" name="name" class="form-control" placeholder="eg.evelyne250" [(ngModel)]="username" name="username" (keyup)="findProfile()">
         <br>   
         </form>
+        <p class="jumbotron"></p>    
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -53,7 +43,7 @@
                <div class="col-md-6">
                   <div class="panel panel-default">
                  
-                      <h1>Repos</h1>
+                     
                     </div>
                     <div class="panel-body" *ngFor="let repo of repos">
                       <p>
