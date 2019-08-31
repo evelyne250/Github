@@ -97,13 +97,13 @@ import { HttpClient } from '@angular/common/http';
  @Injectable()
 export class ProfileService {
 private username:any;
-private repositories:any; 
+private repos:any; 
 private access_token:"0229d801c1bba53175f7eae60ff1b80e540063c5";
 
   constructor(private http:HttpClient) { 
     console.log("service is now ready");
     this.username='evelyne250';
-    this.repositories='https://api.github.com/users/evelyne250/repos'; 
+    this.repos='https://github.com/search?q=Quote'; 
     this.access_token='0229d801c1bba53175f7eae60ff1b80e540063c5';
   
   }
@@ -116,18 +116,17 @@ getProfileInfo(){
 getProfileRepos(){
   return this.http.get("https://api.github.com/users/" + this.username + "/repos?access_token=" + 
   this.access_token);
-  
+
 }
 
-// getProfileRepos(){
-//   return this.http.get("https://github.com/" + this.username  + "?tab=repositories");
-  
-// }
+ getRepos(){
+return this.http.get("https://github.com/" + "search?q=" + this.repos);
+   }
 
 updateProfile(username:string){
   this.username = username;
 }
 updateRepos(repos:any){
-  this.repositories = repos;
+  this.repos = repos;
 }
 }
