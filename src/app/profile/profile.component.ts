@@ -50,8 +50,7 @@ export class ProfileComponent implements OnInit {
 profile:any;
 repos:any;
 username:string;
-created_at: Date;
-updated_at: Date;
+
   constructor(private profileService:ProfileService) { 
   
     this.profileService.getProfileInfo().subscribe(profile => {
@@ -70,7 +69,7 @@ updated_at: Date;
       console.log(profile);
       this.profile = profile;
     });
-
+    
     this.profileService.getProfileRepos().subscribe(repos => {
   		console.log(repos);
   		this.repos = repos;
