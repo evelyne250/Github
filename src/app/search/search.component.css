@@ -9,3 +9,12 @@ footer {
   color: white;
   text-align: center;
 }
+a{
+  padding-bottom: 15px;
+}
+.card{
+  color: rgb(233, 112, 196);
+}
+/* .container{
+  background-color: lightpink;
+} */

@@ -3,9 +3,7 @@
         <form>
             Username:<br>
               <input type="text" name="name" class="form-control" placeholder="eg.evelyne250" [(ngModel)]="username" name="username" (keyup)="findProfile()">
-              <!-- Repositories:<br> -->
-              <!-- <input type="text" name="name" class="form-control" placeholder="eg.Quote" [(ngModel)]="repos" name="repositories" (keyup)="findRepos()">
-              -->
+             
               <br>   
         </form>
            <p class="jumbotron"></p>  
@@ -13,7 +11,7 @@
          
     <div class="container">
         <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div *ngIf="profile">
          
               <div>
@@ -43,16 +41,18 @@
               </div>  
           </div>
        </div>
-              <div class="col-md-6">
-                  <div *ngFor="let repo of repos">
-                      <p>
-                        {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-info">More Info</a>
-                      </p>
+    
+              <div class="col-md-7">
+                  <div *ngFor="let repo of repos" class="card">
+                      <p class="card-header">
+                        {{repo.name| uppercase}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-info">More Info</a>
+                       <br>This repo was created at {{repo.created_at | date}}</p>
+                      <!-- <p>This repo was created at {{repo.created_at | date}}</p> -->
                    </div>
-              </div>
+              
         </div>
-    <!-- <div *ngIf="repos"></div> -->
-      
+   
+    </div>
         <footer class="blockquote-footer">evelyne@2019</footer>
     </div>
               
